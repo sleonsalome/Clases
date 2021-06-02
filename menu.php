@@ -23,15 +23,15 @@
 <body>
     <h1>Bienvenido</h1>
 
-    <a href="listado.php" class="btn btn-primary" role="button" style="position: absolute; left: 650px; top: 100px;">
+    <a href="listado.php" class="btn btn-primary btn-lg" role="button" style="position: absolute; left: 650px; top: 100px;">
         <span class="fas fa-list-ul"></span> Listado
     </a>
     <br>
-    <a href="buscar.php" class="btn btn-primary" role="button" style="position: absolute; left: 650px; top: 200px;">
+    <a href="buscar.php" class="btn btn-primary btn-lg" role="button" style="position: absolute; left: 650px; top: 200px;">
         <span class="fas fa-search"></span> Buscar
     </a>
     <br>
-    <a href="agregar.php" class="btn btn-primary" role="button" style="position: absolute; left: 650px; top: 300px;">
+    <a href="agregar.php" class="btn btn-primary btn-lg" role="button" style="position: absolute; left: 650px; top: 300px;">
         <span class="fas fa-user-plus"></span> Agregar
     </a>
 
