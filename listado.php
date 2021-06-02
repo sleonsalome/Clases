@@ -1,18 +1,5 @@
 <?php
-    $conexion=mysqli_connect('localhost','root','','peliculas');
-?>
-
-<?php
-    $server = 'localhost';
-    $username = 'root';
-    $password = '';
-    $database = 'peliculas';
-
-    try {
-        $conn = new PDO("mysql:host=$server;dbname=$database;",$username, $password); 
-    } catch (PDOException $e) {
-        die('Connected failed: ' .$e->getMessage());
-    }
+    require 'basepc2.php';
 ?>
 
 
@@ -22,7 +9,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Peliculas</title>
+        <title>Listado</title>
         <style>
             table, th, td {
                 border: 1px solid black;
@@ -36,22 +23,28 @@
     </head>
     <body>
 
-        <h1>Mis Películas</h1>
+        <h1>Listado de alumnos</h1>
+
+        <br>
+        <a href="menu.php" role="button">Regresar</a>
+        <br>
 
         <hr>
 
         <div class="table">
             <table id="tpeliculas" style="width:100%">
                 <thead>
-                    <th>Id</th>
+                    <th>DNI</th>
                     <th>Nombre</th>
-                    <th>Detalles</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Curso</th>
                 </thead>
 
                 <tbody>
                 <?php
 
-                    $msql="SELECT * from movies";
+                    $msql="SELECT * from datos";
                     $result=mysqli_query($conexion,$msql);
 
                     while ($mostrar=mysqli_fetch_array($result)) {
@@ -59,9 +52,11 @@
                 ?>
 
                 <tr style="text-align: center;">
-                    <td><?php echo $mostrar['id'] ?></td>
+                    <td><?php echo $mostrar['dni'] ?></td>
                     <td><?php echo $mostrar['nombre'] ?></td>
-                    <td><?php echo $mostrar['detalles'] ?></td>             
+                    <td><?php echo $mostrar['apellido'] ?></td>
+                    <td><?php echo $mostrar['email'] ?></td>
+                    <td><?php echo $mostrar['curso'] ?></td>             
                 </tr>
                 
                 <?php
